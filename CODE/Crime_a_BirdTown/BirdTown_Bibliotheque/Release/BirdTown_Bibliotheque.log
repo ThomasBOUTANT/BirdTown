@@ -1,0 +1,16 @@
+﻿  monMain.cpp
+monMain.cpp(128): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+monMain.cpp(132): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+monMain.cpp(136): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+monMain.cpp(140): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+monMain.cpp(150): warning C4244: 'argument' : conversion de 'float' en 'int', perte possible de données
+monMain.cpp(183): warning C4996: 'sf::Text::setColor': a été déclaré déconseillé
+  C:\Software\SFML-2.4.2\include\SFML/Graphics/Text.hpp(177): note: voir la déclaration de 'sf::Text::setColor'
+monMain.cpp(200): warning C4018: '>=' : incompatibilité signed/unsigned
+monMain.cpp(218): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+monMain.cpp(221): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+monMain.cpp(224): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+monMain.cpp(230): warning C4244: '=' : conversion de 'int' en 'float', perte possible de données
+monMain.cpp(231): warning C4244: '=' : conversion de 'int' en 'float', perte possible de données
+monMain.cpp(233): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+  BirdTown_Bibliotheque.vcxproj -> c:\users\thomas\documents\visual studio 2017\Projects\Crime_a_BirdTown\Release\BirdTown_Bibliotheque.lib
