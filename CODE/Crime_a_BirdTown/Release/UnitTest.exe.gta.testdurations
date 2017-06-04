@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<GtaTestDurations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Executable>c:\users\thomas\documents\visual studio 2017\Projects\Crime_a_BirdTown\Release\UnitTest.exe</Executable>
-  <TestDurations>
-    <TestDuration Test="Exemple1.Factorielle" Duration="1" />
-    <TestDuration Test="Exemple1.CarreParfait" Duration="1" />
-  </TestDurations>
-</GtaTestDurations>
