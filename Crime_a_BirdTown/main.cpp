@@ -30,6 +30,7 @@ sf::Music music;
 //sfe::Movie movie;
 tmx::Map macarte;
 
+
 int speed = 20;
 enum Dir { Down, Left, Right, Up };
 sf::Vector2i anim(1, Down);
@@ -150,6 +151,7 @@ int main()
 		window.draw(layerFour);
 		window.draw(layerFive);
 		
+		std::cout << position_perso.x << " et " << position_perso.y << std::endl;
 		affichage_window();
 	}
 

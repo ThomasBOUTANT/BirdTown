@@ -92,7 +92,7 @@ public:
 
 private:
 
-    sf::Vector2f m_chunkSize = sf::Vector2f(1024.f, 1024.f);
+    sf::Vector2f m_chunkSize = sf::Vector2f(3200.f, 3200.f); // TODO - a changer selon la taille de la carte
     sf::Vector2u m_chunkCount;
     sf::FloatRect m_globalBounds;
 
@@ -140,8 +140,19 @@ private:
                             {
                                 m_chunkArrays.emplace_back(std::make_unique<ChunkArray>(*tr.find(ts->getImagePath())->second));
                                 auto texSize = m_chunkArrays.back()->getTextureSize();
-                                tsTileCount.x = texSize.x / tileSize.x;
-                                tsTileCount.y = texSize.y / tileSize.y;
+                                //tsTileCount.x = texSize.x / tileSize.x;
+                                //tsTileCount.y = texSize.y / tileSize.y;
+								//debut ajout
+								if (ts->getSpacing() > 0) {
+									tsTileCount.x = (texSize.x + 1) / (tileSize.x + ts->getSpacing());
+									tsTileCount.y = (texSize.y + 1) / (tileSize.y + ts->getSpacing());
+								}
+								else {
+									tsTileCount.x = texSize.x / tileSize.x;
+									tsTileCount.y = texSize.y / tileSize.y;
+								}
+								//fin ajout
+
                                 chunkArrayCreated = true;
                             }
                             auto& ca = m_chunkArrays.back();
@@ -149,9 +160,14 @@ private:
                             
                             auto idIndex = tileIDs[idx].ID - ts->getFirstGID();
                             sf::Vector2f tileIndex(idIndex % tsTileCount.x, idIndex / tsTileCount.x);
-                            tileIndex.x *= tileSize.x;
-                            tileIndex.y *= tileSize.y;
-                            Tile tile = 
+                            //tileIndex.x *= tileSize.x;
+                            //tileIndex.y *= tileSize.y;
+							//debut ajout : https://github.com/fallahn/tmxlite/pull/2/files
+							tileIndex.x = tileIndex.x * tileSize.x + tileIndex.x * ts->getSpacing();
+							tileIndex.y = tileIndex.y * tileSize.y + tileIndex.y * ts->getSpacing();
+                            //fin ajout
+							
+							Tile tile = 
                             {
                                 sf::Vertex(tileOffset, vertColour, tileIndex),
                                 sf::Vertex(tileOffset + sf::Vector2f(tileSize.x, 0.f), vertColour, tileIndex + sf::Vector2f(tileSize.x, 0.f)),
