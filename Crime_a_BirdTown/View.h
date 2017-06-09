@@ -5,7 +5,7 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 
-#include "../Crime_a_BirdTown/Perso.h"
+#include "Perso.h"
 
 
 class View
