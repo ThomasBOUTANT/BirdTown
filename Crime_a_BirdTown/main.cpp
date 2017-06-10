@@ -148,6 +148,7 @@ int main()
 		window.draw(layerOne);
 		window.draw(layerTwo);
 		window.draw(layerThree);
+		window.draw(heros.sprite_perso);
 		window.draw(layerFour);
 		window.draw(layerFive);
 		
@@ -267,7 +268,7 @@ void affichage_window() {
 	/* Affichage de window */
 	
 	//window.draw(mapMonde.sprite_map);
-	window.draw(heros.sprite_perso);
+	//window.draw(heros.sprite_perso);
 
 	//Dessin des PNJs sur la map
 	window.draw(PNJ_1.sprite_PNJ);

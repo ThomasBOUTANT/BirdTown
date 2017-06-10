@@ -9,21 +9,24 @@ Pour lancer le jeu, être en mode "Release" et non "Debug".
 
 
 Dans C:\Software, il y a les fichiers :
-	- SFML-2.4.2
-	- tmxlite
-	- sfeMovie
 
+	- SFML-2.4.2 
+
+	- tmxlite    //que vous pouvez trouvez ici : https://github.com/fallahn/tmxlite/tree/master/tmxlite
+
+	- sfeMovie  //pas utilise pour l'instant, donc facultatif
+ 
 
 Dans Propriétés du projet BirdTown :
 
 	- Pour "C/C++" -> "Autres répertoires Include", il y a : 
 
-			C:\Software\tmxlite\tmxlite\include; C:\Software\SFML-2.4.2\include; C:\Software\sfeMovie\include
+			C:\Software\tmxlite\tmxlite\include; C:\Software\SFML-2.4.2\include; C:\Software\sfeMovie\include (facultatif)
 
 
 	- Pour "Editeurs de liens" -> "Général" -> "Répertoires de bibliotheques supplémentaires", il y a :
 
-			C:\Software\SFML-2.4.2\lib; C:\Software\tmxlite\tmxlite\bin\ReleaseShared; C:\Software\sfeMovie\lib
+			C:\Software\SFML-2.4.2\lib; C:\Software\tmxlite\tmxlite\bin\ReleaseShared; C:\Software\sfeMovie\lib (facultatif)
 
 
 	- Dans "Editeurs de liens" -> "entrée" -> "Dépendances supplémentaires", il y a :
