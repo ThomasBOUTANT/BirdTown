@@ -7,7 +7,7 @@
 
 using namespace std;
 
-void Perso::create(char* texture, int largeurPerso, int hauteurPerso, int posInitX, int posInitY)
+void Perso::create(char* texture, float largeurPerso, float hauteurPerso, float posInitX, float posInitY)
 {
 	largeur_sprite_perso = largeurPerso;
 	hauteur_sprite_perso = hauteurPerso;

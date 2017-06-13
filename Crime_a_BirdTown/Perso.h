@@ -11,16 +11,16 @@ class Perso
 public:
 	sf::Texture perso;
 	sf::Sprite sprite_perso;
-	int largeur_sprite_perso;
-	int hauteur_sprite_perso;
+	float largeur_sprite_perso;
+	float hauteur_sprite_perso;
 
-	int positionInitialeX;
-	int positionInitialeY;
+	float positionInitialeX;
+	float positionInitialeY;
 
 	//Méthodes
 
 	//Creation du PNJ
-	void create(char* texture, int largeurPerso, int hauteurPerso, int posInitX, int posInitY);
+	void create(char* texture, float largeurPerso, float hauteurPerso, float posInitX, float posInitY);
 	void gestionCollisionBords();
 };
 

@@ -13,7 +13,7 @@
 #include "View.h"
 
 /* Pour le chargement de la map (format .tmx) */
-#include <sfeMovie/Movie.hpp>
+#include <sfeMovie/Movie.hpp> //inutile ici, mais on voulait mettre une cinematique au debut (donc une video)...
 #include "tmxlite/Map.hpp"
 #include "SFMLOrthogonalLayer.hpp"
 
@@ -36,7 +36,7 @@ tmx::Map macarte;
 const auto& layers = macarte.getLayers();
 
 
-int speed = 20;
+int speed = 4;
 enum Dir { Down, Left, Right, Up };
 sf::Vector2i anim(1, Down);
 bool updateFPS = true;
@@ -45,7 +45,7 @@ float fpsCount = 0, switchFps = 50, fpsSpeed = 500;
 sf::Vector2f position_perso(0, 0);
 sf::Vector2i positionSouris;
 
-Map mapMonde;
+Map mapMonde; //vielle map
 Map mapMenu; /* fenetre menu */
 
 Perso heros;
@@ -74,7 +74,6 @@ bool collision(float, float);
 
 #pragma endregion prototypes
 
-
 int main()
 {
 	//affichage_texte("ESSAI", position_perso.x - 30, position_perso.y + 30);
@@ -92,7 +91,7 @@ int main()
 	/* Creation Maps */
 	mapMonde.create("map.png"); // on s'en sert encore pour la minimap
 
-	if (!macarte.load("./carte02.tmx")) {
+	if (!macarte.load("./carte.tmx")) {
 		printf("ca marche pas!\n");
 	}
 
@@ -106,7 +105,6 @@ int main()
 	MapLayer layerSix(macarte, 6);
 	MapLayer layerSeven(macarte, 7);
 	MapLayer layerEight(macarte, 8);
-	MapLayer layerNine(macarte, 9);
 
 	mapMenu.create("menu_birdtown.png");
 
@@ -120,7 +118,7 @@ int main()
 
 
 	/* Ouverture d'une musique */
-	if (!music.openFromFile("chocobo.ogg")) {
+	if (!music.openFromFile("chocobo.ogg")) { // musique deja existante (exemple), mais c'est la premiere venant en tete quand on parle jeu video et oiseau...
 		return -1; // erreur
 	}
 	music.play();
@@ -186,31 +184,33 @@ int main()
 		window.draw(layerZero); // j'ai mis ces draw ici, mais c'est moche... cependant ca marche mieux comme ca pour l'instant
 		window.draw(layerOne);
 		window.draw(layerTwo);
-		window.draw(layerThree);
-
-		window.draw(layerFour);
-
-
+		
 		if (animation) {
-			window.draw(layerFive);
+			window.draw(layerThree);
 			animation = false;
 		}
 		else {
-			window.draw(layerSix);
+			window.draw(layerFour);
+			
 			animation = true;
 		}
-		window.draw(heros.sprite_perso);
-		window.draw(layerSeven);
-		window.draw(layerEight);
-		//window.draw(layerNine);
+		window.draw(layerFive);
 
 		//Dessin des PNJs sur la map
 		for each  (auto const &pnj in vec_PNJ)
 		{
 			window.draw(pnj->sprite_PNJ);
+			if (pnj->indice_affiche) {
+				window.draw(pnj->indice_PNJ);
+			}
+
 		}
 		//Fin dessin PNJs
 
+		window.draw(layerSix);
+		window.draw(heros.sprite_perso);
+		window.draw(layerSeven);
+		window.draw(layerEight);
 
 		affichage_window();
 	}
@@ -246,18 +246,20 @@ void gestion_clavier() {
 		if (!collision(position_perso.x + speed, position_perso.y)) {
 			heros.sprite_perso.move(speed, 0);
 		}
-
 	}
 
-	//On appuie sur E pour interroger un villageois
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::E)) {
-		//dialoguePNJ();
+	//On appuie sur I pour interroger un villageois
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::I)) {
+		int x = (int)position_perso.x;
+		int y = (int)position_perso.y;
+		PNJ_interroger(x, y);
 	}
 
-	//On appuie sur G pour le désigner comme coupable (guilty)
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::G)) {
-		//TODO
-		std::cout << "GUILTY" << std::endl;
+	//On appuie sur D pour le désigner comme coupable
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
+		int x = (int)position_perso.x;
+		int y = (int)position_perso.y;
+		PNJ_designer(x, y);
 	}
 
 
@@ -287,6 +289,17 @@ void gestion_clavier() {
 		//if (!movie.openFromFile("video.mp4")) {
 		//	printf("erreur!!");
 		//}
+	}
+
+	//On appuie sur B pour remettre le perso au point de depart
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::B)) {
+		anim.y = Down;
+		heros.sprite_perso.setPosition(2000, 1750);
+	}
+
+	//On appuie sur W pour augmenter la vitesse a 20
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
+		speed = 20;
 	}
 
 }
@@ -335,9 +348,6 @@ void nettoyage_window() {
 void affichage_window() {
 
 	/* Affichage de window */
-
-	//window.draw(mapMonde.sprite_map);
-	//window.draw(heros.sprite_perso);
 
 
 	//Ajout de la minimap
@@ -399,7 +409,6 @@ text.setPosition(x, y);
 
 }
 */
-
 
 bool collision(float new_x, float new_y)
 {
