@@ -17,6 +17,8 @@
 #include "tmxlite/Map.hpp"
 #include "SFMLOrthogonalLayer.hpp"
 
+#include "pugixml.cpp";
+
 #pragma endregion includes
 
 using namespace std;
@@ -51,11 +53,8 @@ Perso heros;
 View vue;
 View vue2; /* minimap */
 
-PNJ PNJ_1;
-PNJ PNJ_2;
-
-PNJ PNJ_1_menu;
-PNJ PNJ_2_menu;
+vector<unique_ptr<PNJ>> vec_PNJ;
+sf::Text affichage;
 
 sf::Text text;
 //bool textExisted = false;
@@ -114,11 +113,11 @@ int main()
 	/* Creation Heros */
 	heros.create("perso.png", 32, 48, 1960, 720);
 
-	/* Creation d'un PNJ -> pas encore de prise en compte du code de Marie */
-	PNJ_1.create("PNJ_1", 1590, 1630, "sprite_foulard.png", "triste.png");
-	PNJ_2.create("PNJ_2", 1890, 1950, "sprite_mousquetaire.png", "triste.png");
-	PNJ_1_menu = PNJ_1.create_menu(PNJ_1, 0, 100);
-	PNJ_2_menu = PNJ_2.create_menu(PNJ_2, 100, 100);
+	
+	//Creation des PNJs
+	PNJ_creation();
+	//Fin Creation PNJs
+
 
 	/* Ouverture d'une musique */
 	if (!music.openFromFile("chocobo.ogg")) {
@@ -204,6 +203,13 @@ int main()
 		window.draw(layerSeven);
 		window.draw(layerEight);
 		//window.draw(layerNine);
+
+		//Dessin des PNJs sur la map
+		for each  (auto const &pnj in vec_PNJ)
+		{
+			window.draw(pnj->sprite_PNJ);
+		}
+		//Fin dessin PNJs
 
 
 		affichage_window();
@@ -333,9 +339,6 @@ void affichage_window() {
 	//window.draw(mapMonde.sprite_map);
 	//window.draw(heros.sprite_perso);
 
-	//Dessin des PNJs sur la map
-	window.draw(PNJ_1.sprite_PNJ);
-	window.draw(PNJ_2.sprite_PNJ);
 
 	//Ajout de la minimap
 	window.setView(vue2.view);
@@ -348,8 +351,7 @@ void affichage_window() {
 
 	/* Affichage de menu */
 	menu.draw(mapMenu.sprite_map);
-	menu.draw(PNJ_1_menu.sprite_PNJ);
-	menu.draw(PNJ_2_menu.sprite_PNJ);
+	
 
 	menu.display();
 }

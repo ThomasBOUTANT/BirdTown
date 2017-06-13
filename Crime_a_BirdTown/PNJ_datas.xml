@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Balises -->
+
+<PNJ>
+  <personnage name="Foulard">
+    <nom>"PNJ_1"</nom>
+    <image>sprite_foulard.png</image>
+    <place_x>1500</place_x>
+    <place_y>1600</place_y>
+    <indice>triste.png</indice>
+    <coupable>false</coupable>
+  </personnage>
+
+  <personnage name="Ninja">
+    <nom>"PNJ_2"</nom>
+    <image>sprite_ninja.png</image>
+    <place_x>1600</place_x>
+    <place_y>2000</place_y>
+    <indice>triste.png</indice>
+    <coupable>false</coupable>
+  </personnage>
+
+  <personnage name="Rose">
+    <nom>"PNJ_3"</nom>
+    <image>sprite_oiseaurose.png</image>
+    <place_x>1700</place_x>
+    <place_y>1700</place_y>
+    <indice>triste.png</indice>
+    <coupable>false</coupable>
+  </personnage>
+
+  <personnage name="Mousquetaire">
+    <nom>"PNJ_4"</nom>
+    <image>sprite_mousquetaire.png</image>
+    <place_x>1500</place_x>
+    <place_y>1900</place_y>
+    <indice>triste.png</indice>
+    <coupable>false</coupable>
+  </personnage>
+
+  <personnage name="Pigeon">
+    <nom>"PNJ_5"</nom>
+    <image>sprit base_PNJ.png</image>
+    <place_x>1800</place_x>
+    <place_y>1800</place_y>
+    <indice>triste.png</indice>
+    <coupable>false</coupable>
+  </personnage>
+
+  <personnage name="Hibou">
+    <nom>"PNJ_6"</nom>
+    <image>sprite_hibou.png</image>
+    <place_x>1600</place_x>
+    <place_y>1900</place_y>
+    <indice>triste.png</indice>
+    <coupable>false</coupable>
+  </personnage>
+
+  <personnage name="DameChignon">
+    <nom>"PNJ_7"</nom>
+    <image>sprite_damechignon.png</image>
+    <place_x>1700</place_x>
+    <place_y>2100</place_y>
+    <indice>triste.png</indice>
+    <coupable>false</coupable>
+  </personnage>
+
+  <personnage name="Maire">
+    <nom>"PNJ_8"</nom>
+    <image>sprite_maire.png</image>
+    <place_x>1500</place_x>
+    <place_y>1800</place_y>
+    <indice>triste.png</indice>
+    <coupable>false</coupable>
+  </personnage>
+
+  <personnage name="Commissaire">
+    <nom>"PNJ_9"</nom>
+    <image>sprite_commissaire.png</image>
+    <place_x>1200</place_x>
+    <place_y>1200</place_y>
+    <indice>triste.png</indice>
+    <coupable>true</coupable>
+  </personnage>
+
+</PNJ>
