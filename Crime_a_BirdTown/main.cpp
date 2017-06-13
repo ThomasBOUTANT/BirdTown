@@ -22,6 +22,8 @@
 using namespace std;
 
 #pragma region variables
+bool animation = true;
+
 sf::RenderWindow window;
 sf::RenderWindow menu;
 
@@ -29,6 +31,7 @@ sf::Music music;
 
 //sfe::Movie movie;
 tmx::Map macarte;
+const auto& layers = macarte.getLayers();
 
 
 int speed = 20;
@@ -56,6 +59,8 @@ PNJ PNJ_2_menu;
 
 sf::Text text;
 //bool textExisted = false;
+
+int dureeAnimation = 150; // en milliseconde
 #pragma endregion variables
 
 #pragma region prototypes
@@ -66,6 +71,8 @@ void update(bool, sf::Clock);
 void nettoyage_window();
 void affichage_window();
 //void dialoguePNJ();
+bool collision(float, float);
+
 #pragma endregion prototypes
 
 
@@ -80,6 +87,8 @@ int main()
 	window.setFramerateLimit(60);
 
 	sf::Clock clock;
+	sf::Clock clockAnimation;
+
 
 	/* Creation Maps */
 	mapMonde.create("map.png"); // on s'en sert encore pour la minimap
@@ -88,12 +97,17 @@ int main()
 		printf("ca marche pas!\n");
 	}
 
+
 	MapLayer layerZero(macarte, 0);
 	MapLayer layerOne(macarte, 1);
 	MapLayer layerTwo(macarte, 2);
 	MapLayer layerThree(macarte, 3);
 	MapLayer layerFour(macarte, 4);
 	MapLayer layerFive(macarte, 5);
+	MapLayer layerSix(macarte, 6);
+	MapLayer layerSeven(macarte, 7);
+	MapLayer layerEight(macarte, 8);
+	MapLayer layerNine(macarte, 9);
 
 	mapMenu.create("menu_birdtown.png");
 
@@ -113,7 +127,7 @@ int main()
 	music.play();
 	music.setLoop(true);
 
-	while (window.isOpen() && menu.isOpen() )
+	while (window.isOpen() && menu.isOpen())
 	{
 		sf::Event event;
 		while (window.pollEvent(event))
@@ -129,7 +143,21 @@ int main()
 				//textExisted = false;
 			}
 		}
-		
+
+
+		/*for (const auto& layer : layers)
+		{
+			if (layer.name == "Collision")
+			{
+				for (const auto& object : layer.objects)
+				{
+					collision = object.contains(point);
+				}
+			}
+		}
+		*/
+
+
 		/* Gestion clavier*/
 		gestion_clavier();
 
@@ -138,21 +166,46 @@ int main()
 
 		/* Update du jeu */
 		update(updateFPS, clock);
+		sf::Time timeAnimation = clockAnimation.getElapsedTime();
+
+		if (timeAnimation.asMilliseconds() > dureeAnimation) {
+			animation = true;
+			if (timeAnimation.asMilliseconds() > 2 * dureeAnimation) {
+				clockAnimation.restart();
+			}
+		}
+		else {
+			animation = false;
+		}
 		clock.restart();
+
 
 		/* Affichage des differentes fenetres*/
 		nettoyage_window();
-		
+
 		window.setView(vue.view);
 		window.draw(layerZero); // j'ai mis ces draw ici, mais c'est moche... cependant ca marche mieux comme ca pour l'instant
 		window.draw(layerOne);
 		window.draw(layerTwo);
 		window.draw(layerThree);
-		window.draw(heros.sprite_perso);
+
 		window.draw(layerFour);
-		window.draw(layerFive);
-		
-		std::cout << position_perso.x << " et " << position_perso.y << std::endl;
+
+
+		if (animation) {
+			window.draw(layerFive);
+			animation = false;
+		}
+		else {
+			window.draw(layerSix);
+			animation = true;
+		}
+		window.draw(heros.sprite_perso);
+		window.draw(layerSeven);
+		window.draw(layerEight);
+		//window.draw(layerNine);
+
+
 		affichage_window();
 	}
 
@@ -165,19 +218,29 @@ void gestion_clavier() {
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
 		anim.y = Up;
-		heros.sprite_perso.move(0, -speed);
+		if (!collision(position_perso.x, position_perso.y - speed)) {
+			heros.sprite_perso.move(0, -speed);
+		}
 	}
 	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
 		anim.y = Down;
-		heros.sprite_perso.move(0, speed);
+		if (!collision(position_perso.x, position_perso.y + speed)) {
+			heros.sprite_perso.move(0, speed);
+		}
 	}
 	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
 		anim.y = Left;
-		heros.sprite_perso.move(-speed, 0);
+		if (!collision(position_perso.x - speed, position_perso.y)) {
+			heros.sprite_perso.move(-speed, 0);
+		}
+
 	}
 	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
 		anim.y = Right;
-		heros.sprite_perso.move(speed, 0);
+		if (!collision(position_perso.x + speed, position_perso.y)) {
+			heros.sprite_perso.move(speed, 0);
+		}
+
 	}
 
 	//On appuie sur E pour interroger un villageois
@@ -250,7 +313,7 @@ void update(bool updateFPS, sf::Clock clock) {
 
 	// Gestion des collisions sur les bords
 	heros.gestionCollisionBords();
-	
+
 	// Creation des vues
 	vue.create(heros, 800, 600);
 	vue2.create(heros, 1600, 1200);
@@ -266,7 +329,7 @@ void nettoyage_window() {
 void affichage_window() {
 
 	/* Affichage de window */
-	
+
 	//window.draw(mapMonde.sprite_map);
 	//window.draw(heros.sprite_perso);
 
@@ -288,7 +351,7 @@ void affichage_window() {
 	menu.draw(PNJ_1_menu.sprite_PNJ);
 	menu.draw(PNJ_2_menu.sprite_PNJ);
 
-	menu.display();	
+	menu.display();
 }
 
 /*
@@ -334,3 +397,53 @@ text.setPosition(x, y);
 
 }
 */
+
+
+bool collision(float new_x, float new_y)
+{
+	const auto& mapProperties = macarte.getProperties();
+
+	for (const auto& prop : mapProperties)
+	{
+		std::cout << "Found property: " << prop.getName() << std::endl;
+		std::cout << "Type: " << int(prop.getType()) << std::endl;
+	}
+
+	const auto& layers = macarte.getLayers();
+	for (const auto& layer : layers) {
+		if (layer->getType() == tmx::Layer::Type::Object) {
+			const auto& objects = dynamic_cast<tmx::ObjectGroup*>(layer.get())->getObjects();
+			for (const auto& object : objects) {
+				if (object.getName() == "Object") {
+					const auto& properties = object.getProperties();
+
+					tmx::FloatRect rectangle = object.getAABB();
+
+					for (const auto& prop : properties) {
+						if (prop.getName() == "collision") {
+							float new_x_right = new_x + heros.largeur_sprite_perso;
+							float rectangle_right = rectangle.left + rectangle.width;
+							float new_y_bottom = new_y + heros.hauteur_sprite_perso;
+							float rectangle_bottom = rectangle.top + rectangle.height;
+							if ((
+								(new_x > rectangle.left && new_x < rectangle_right)
+								|| (new_x_right > rectangle.left && new_x_right < rectangle_right)
+								|| (rectangle.left > new_x && rectangle.left < new_x_right)
+								)
+								&&
+								(
+								(new_y > rectangle.top && new_y < rectangle_bottom)
+									|| (new_y_bottom > rectangle.top && new_y_bottom < rectangle_bottom)
+									|| (rectangle.top > new_y && rectangle.top < new_y_bottom)
+									)
+								) {
+								return true;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	return false;
+}
