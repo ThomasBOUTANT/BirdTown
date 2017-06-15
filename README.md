@@ -16,8 +16,6 @@ Dans C:\Software, il y a les fichiers :
 	- SFML-2.4.2 
 
 	- tmxlite    //que vous pouvez trouvez ici : https://github.com/fallahn/tmxlite/tree/master/tmxlite
-
-	- sfeMovie  //pas utilise pour l'instant, donc facultatif
  
  	- pugixml-1.8
 
@@ -27,7 +25,6 @@ Dans Propriétés du projet BirdTown :
 
 			C:\Software\tmxlite\tmxlite\include;
 			C:\Software\SFML-2.4.2\include; 
-			C:\Software\sfeMovie\include; (facultatif)
 			C:\Software\pugixml-1.8\src
 
 
@@ -35,7 +32,9 @@ Dans Propriétés du projet BirdTown :
 
 			C:\Software\SFML-2.4.2\lib;
 			C:\Software\tmxlite\tmxlite\bin\ReleaseShared;
-			C:\Software\sfeMovie\lib (facultatif)
+
+
+	Remarque : il faudra peut-être faire un cmake pour obtenir le fichier /bin de tmxlite...
 
 
 	- Dans "Editeurs de liens" -> "entrée" -> "Dépendances supplémentaires", il y a :
