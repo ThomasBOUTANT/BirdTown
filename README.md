@@ -1,6 +1,9 @@
 # BIRDTOWN
 Game created for the C++ lessons - Télécom SudParis (Evry, France)
 
+BOUTANT Thomas
+CHARRUAULT Marie
+
 
 Pour lancer le jeu, être en mode "Release" et non "Debug".
 
@@ -16,17 +19,23 @@ Dans C:\Software, il y a les fichiers :
 
 	- sfeMovie  //pas utilise pour l'instant, donc facultatif
  
+ 	- pugixml-1.8
 
 Dans Propriétés du projet BirdTown :
 
 	- Pour "C/C++" -> "Autres répertoires Include", il y a : 
 
-			C:\Software\tmxlite\tmxlite\include; C:\Software\SFML-2.4.2\include; C:\Software\sfeMovie\include (facultatif)
+			C:\Software\tmxlite\tmxlite\include;
+			C:\Software\SFML-2.4.2\include; 
+			C:\Software\sfeMovie\include; (facultatif)
+			C:\Software\pugixml-1.8\src
 
 
 	- Pour "Editeurs de liens" -> "Général" -> "Répertoires de bibliotheques supplémentaires", il y a :
 
-			C:\Software\SFML-2.4.2\lib; C:\Software\tmxlite\tmxlite\bin\ReleaseShared; C:\Software\sfeMovie\lib (facultatif)
+			C:\Software\SFML-2.4.2\lib;
+			C:\Software\tmxlite\tmxlite\bin\ReleaseShared;
+			C:\Software\sfeMovie\lib (facultatif)
 
 
 	- Dans "Editeurs de liens" -> "entrée" -> "Dépendances supplémentaires", il y a :

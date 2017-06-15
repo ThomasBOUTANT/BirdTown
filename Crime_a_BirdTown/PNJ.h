@@ -16,6 +16,8 @@ public:
 	sf::Sprite sprite_PNJ;
 	sf::Texture texture_indice_PNJ;
 	sf::Sprite indice_PNJ;
+	sf::Texture texture_indice_menu;
+	sf::Sprite indice_menu;
 	bool coupable;
 	bool indice_affiche;
 
@@ -24,14 +26,10 @@ public:
 	//Creation du PNJ
 	PNJ(char* nom, float x_PNJ, float y_PNJ, char* texture, char* indice, bool coup);
 	//void create(char* nom, int x_PNJ, int y_PNJ, char* texture, char* indice, bool coup);
-
 };
 
 void PNJ_creation();
 void PNJ_interroger(float x, float y);
 void PNJ_designer(float x, float y);
-
-
-
 
 #endif

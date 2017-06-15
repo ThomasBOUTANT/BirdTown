@@ -112,7 +112,7 @@ private:
             vertColour.a = opacity;
 
             auto offset = layer.getOffset();
-            sf::Vector2f layerOffset(offset.x, offset.y);
+            sf::Vector2f layerOffset((float)offset.x, (float)offset.y);
 
             const auto& tileIDs = layer.getTiles();
             
@@ -156,7 +156,7 @@ private:
                                 chunkArrayCreated = true;
                             }
                             auto& ca = m_chunkArrays.back();
-                            sf::Vector2f tileOffset(x * tileSize.x, y * tileSize.y);
+                            sf::Vector2f tileOffset((float)x * tileSize.x, (float)y * tileSize.y);
                             
                             auto idIndex = tileIDs[idx].ID - ts->getFirstGID();
                             sf::Vector2f tileIndex(idIndex % tsTileCount.x, idIndex / tsTileCount.x);

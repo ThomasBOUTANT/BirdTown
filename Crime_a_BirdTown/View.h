@@ -15,15 +15,15 @@ public:
 	sf::View view;
 	
 	//Zoom
-	int screenX;
-	int screenY;
+	float screenX;
+	float screenY;
 
 
 
 	//Méthodes
 
 	//Creation du PNJ
-	void create(Perso heros, int screen_x, int screen_y);
+	void create(Perso heros, float screen_x, float screen_y);
 };
 
 #endif

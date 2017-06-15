@@ -7,6 +7,7 @@
 #include "PNJ.h"
 
 using namespace std;
+extern bool faute;
 
 extern std::vector<unique_ptr<PNJ>> vec_PNJ;
 
@@ -34,11 +35,18 @@ PNJ::PNJ(char* nom, float x_PNJ, float y_PNJ, char* texture, char* indice, bool 
 	texture_indice_PNJ.setSmooth(true);
 	indice_PNJ.setTexture(texture_indice_PNJ);
 
+	if (!texture_indice_menu.loadFromFile(indice)) {
+		printf("Probleme chargement PNJ\n");
+	}
+	texture_indice_menu.setSmooth(true);
+	indice_menu.setTexture(texture_indice_menu);
+
 	//Localisation du PNJ sur la map
 	float f_x = (float)x;
 	float f_y = (float)y;
 	sprite_PNJ.setPosition(f_x, f_y);
 	indice_PNJ.setPosition(f_x - 40, f_y - 40);
+	indice_menu.setPosition(20, 110);
 }
 
 void PNJ_creation() {
@@ -62,8 +70,8 @@ void PNJ_creation() {
 		const char* nom = personnage.child_value("nom");
 		const char* texture = personnage.child_value("image");
 		const char* indice = personnage.child_value("indice");
-		float x = atoi(personnage.child_value("place_x"));
-		float y = atoi(personnage.child_value("place_y"));
+		float x = (float)atoi(personnage.child_value("place_x"));
+		float y = (float)atoi(personnage.child_value("place_y"));
 
 		const char* coup = personnage.child_value("coupable");
 		bool coupable;
@@ -100,10 +108,9 @@ void PNJ_interroger(float x, float y) {
 
 			if (x < X + 90 && x > X - 60 && y < Y + 100 && y > Y - 60 ) {
 				place = true;
-				cout << "Indice donne :" << endl;
-				pnj->indice_affiche = true;
+				cout << "Indice donne" << endl;
 				//Affichage de l'indice
-				cout << "INDICE" << endl;
+				pnj->indice_affiche = true;
 			} 
 		}
 	}
@@ -133,12 +140,12 @@ void PNJ_designer(float x, float y) {
 			if (x < X + 90 && x > X - 60 && y < Y + 100 && y > Y - 60) {
 				place = true;
 				coupable = pnj->coupable;
-				cout << "Coupable = " << pnj->coupable << endl;
 				if (coupable) {
 					cout << "C'est gagne ! Voici notre coupable !" << endl;
 				}
 				else {
 					cout << "Dommage, c'est perdu !" << endl;
+					faute = true;
 				}
 			}
 		}

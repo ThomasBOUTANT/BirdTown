@@ -7,7 +7,7 @@
 
 using namespace std;
 
-void View::create(Perso heros, int screen_x, int screen_y)
+void View::create(Perso heros, float screen_x, float screen_y)
 {
 	screenX = screen_x;
 	screenY = screen_y;
