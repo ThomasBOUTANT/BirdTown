@@ -1,6 +1,10 @@
 # BIRDTOWN_2017
 2D RPG Game created for the C++ lessons
 
+How many time ?
+- version 1: 1 month in May/June 2017
+- version 2: 2 months between July 2017 and August 2017
+
 The team:
 - BOUTANT Thomas
 - CHARRUAULT Marie
