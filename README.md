@@ -1,15 +1,23 @@
-# BIRDTOWN
-Game created for the C++ lessons - Télécom SudParis (Evry, France)
+# BIRDTOWN_2017
+2D RPG Game created for the C++ lessons
 
-BOUTANT Thomas
-CHARRUAULT Marie
+The team:
+- BOUTANT Thomas
+- CHARRUAULT Marie
 
+Context of the project:
+- It's a little school project of 2 months, made at the end of the 2nd year at Télécom SudParis, a Top French Engineer School.
+
+
+We have used Microsoft Visual Studio and the template SFML, plus Tiled Map Editor for the maps, plus XML for the scenarii.
+
+
+
+
+
+//**************    MANUAL: CONFIGURATION (in French) **************//
 
 Pour lancer le jeu, être en mode "Release" et non "Debug".
-
-
-//*****************    CONFIGURATION  *****************//
-
 
 Dans C:\Software, il y a les fichiers :
 
@@ -42,8 +50,4 @@ Dans Propriétés du projet BirdTown :
 			libtmxlite.lib; sfml-audio.lib;sfml-graphics.lib;sfml-network.lib;sfml-system.lib;sfml-window.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)
 
 Penser à mettre les fichiers .dll, .pdb, .iobj, .exp dans le dossier Release/ (qui sont aux emplacements cités ci-dessus dans "Répertoires de bibliotheques supplémentaires")
-
-
-
-
 

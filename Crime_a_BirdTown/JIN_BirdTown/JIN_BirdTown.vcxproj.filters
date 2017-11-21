@@ -1,0 +1,430 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Fichiers sources">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Fichiers de ressources">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Carte.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Character.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjectManager.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="MainMenu.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="PNJ.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="SplashScreen.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Defeat.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Victory.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Images\Indices\chapeau.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\Indices\couleur_beige.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\Indices\couleur_noire.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\Indices\couleur_rouge.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\Indices\default.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\Indices\epee.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\Indices\maybe_human.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\Indices\maybe_rose.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\Indices\pas_chignon.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\Indices\pas_commissaire.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\Indices\pas_foulard.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\Indices\pas_hibou.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\Indices\pas_maire.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\Indices\pas_mousquetaire.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\Indices\pas_ninja.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\Indices\pas_rose.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\Indices\silhouette_hibou.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\Indices\soleil.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\Indices\triste.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\Indices\yeux_bleus.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\Indices\yeux_jaunes.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\Sprites_personnages\le_maire.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\Sprites_personnages\sprit base_PNJ.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\Sprites_personnages\sprite_commissaire.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\Sprites_personnages\sprite_damechignon.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\Sprites_personnages\sprite_foulard.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\Sprites_personnages\sprite_heros_dos.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\Sprites_personnages\sprite_heros_droite.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\Sprites_personnages\sprite_heros_face.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\Sprites_personnages\sprite_heros_gauche.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\Sprites_personnages\sprite_hibou.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\Sprites_personnages\sprite_maire.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\Sprites_personnages\sprite_mousquetaire.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\Sprites_personnages\sprite_ninja.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\Sprites_personnages\sprite_oiseaurose.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\10nthnb.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\61816.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\38189015.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\52775193tilee10-png.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\1240753011012252800.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\1240753267052016900.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\1240753373019659800.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\chibihikaru-tilea2.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\DungeonCrawl_ProjectUtumnoTileset.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\future_01.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\future-joy-tilee.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\heros.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\latest_tileset_so_far_by_thedeadheroalistair-d27xjkd.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\OL_Alternative_DP-KageNoSensei.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\pirate-themed-tilee.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\pnj1.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\public_tileset_by_orohnpokemon-d4vpcfu.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\rtp-addons.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\steampunkish-tileb.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\steampunkish-tilec.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\sujetProjet2017_C_Libellud.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\terrain.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\terrain_atlas.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\tile_custom01.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\tile_custom02.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\tilea1 (1).png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\tilea1.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\tilea2 (1).png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\tilea2 (2).png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\tilea2.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\tilea3 (1).png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\tilea3.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\tilea4 (1).png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\tilea4.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\tilea5 (1).png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\tilea5.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\tileb (1).png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\tileb.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\tilec (1).png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\tilec.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\tiled (1).png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\tiled (2).png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\tiled.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\tilee (1).png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\tilee (2).png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\tilee.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\tilee2.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\tilee3.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\tilee4.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\tilee5.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\tileeyl5.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\tileset_0.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\tileset-pokemon_dawn.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\tileset-wesley.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\tora_vx_01.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\tora_vx_02.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\Sprites_personnages\sprite.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\Ecrans\bravo.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\Ecrans\mainmenu.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\Ecrans\map.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\Ecrans\perdu.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\Ecrans\Intro.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\Indices\le_maire.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\TMX_images\10nthnb.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\TMX_images\1240753011012252800.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\TMX_images\sujetProjet2017_C_Libellud.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\TMX_images\terrain.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\TMX_images\terrain_atlas.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\TMX_images\tilea2 (2).png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\TMX_images\tilee.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="Images\TMX_images\tora_vx_01.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\LPC_Terrain.zip" />
+    <None Include="carte.tmx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="Scenarii\Scenario_1.xml" />
+    <Xml Include="Scenarii\Scenario_2.xml" />
+    <Xml Include="Scenarii\Scenario_3.xml" />
+    <Xml Include="Scenarii\Scenario_4.xml" />
+    <Xml Include="PNJ_datas.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Camera.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Carte.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Character.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjectManager.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="MainMenu.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="PNJ.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="SFMLOrthogonalLayer.hpp">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="SplashScreen.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Defeat.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Victory.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
