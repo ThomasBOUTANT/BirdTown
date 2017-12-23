@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Balises -->
+
+<PNJ>
+  <personnage name="Foulard">
+    <nom>"PNJ_1"</nom>
+    <image>sprite_foulard.png</image>
+    <place_x>1500</place_x>
+    <place_y>1600</place_y>
+    <indice>couleur_beige.png</indice>
+    <coupable>false</coupable>
+    <anime>true</anime>
+    <new_x>1500</new_x>
+    <new_y>1600</new_y>
+  </personnage>
+
+  <personnage name="Ninja">
+    <nom>"PNJ_2"</nom>
+    <image>sprite_ninja.png</image>
+    <place_x>3045</place_x>
+    <place_y>3000</place_y>
+    <indice>silhouette_hibou.png</indice>
+    <coupable>false</coupable>
+    <anime>true</anime>
+    <new_x>3045</new_x>
+    <new_y>3000</new_y>
+  </personnage>
+
+  <personnage name="Rose">
+    <nom>"PNJ_3"</nom>
+    <image>sprite_oiseaurose.png</image>
+    <place_x>965</place_x>
+    <place_y>875</place_y>
+    <indice>pas_foulard.png</indice>
+    <coupable>false</coupable>
+    <anime>true</anime>
+    <new_x>965</new_x>
+    <new_y>875</new_y>
+  </personnage>
+
+  <personnage name="Mousquetaire">
+    <nom>"PNJ_4"</nom>
+    <image>sprite_mousquetaire.png</image>
+    <place_x>1445</place_x>
+    <place_y>925</place_y>
+    <indice>yeux_jaunes.png</indice>
+    <coupable>false</coupable>
+    <anime>true</anime>
+    <new_x>1445</new_x>
+    <new_y>925</new_y>
+  </personnage>
+
+  <personnage name="Pigeon">
+    <nom>"PNJ_5"</nom>
+    <image>sprit base_PNJ.png</image>
+    <place_x>435</place_x>
+    <place_y>1105</place_y>
+    <indice>pas_ninja.png</indice>
+    <coupable>false</coupable>
+    <anime>true</anime>
+    <new_x>435</new_x>
+    <new_y>1105</new_y>
+  </personnage>
+
+  <personnage name="Hibou">
+    <nom>"PNJ_6"</nom>
+    <image>sprite_hibou.png</image>
+    <place_x>965</place_x>
+    <place_y>1135</place_y>
+    <indice>maybe_rose.png</indice>
+    <coupable>true</coupable>
+    <anime>true</anime>
+    <new_x>965</new_x>
+    <new_y>1135</new_y>
+  </personnage>
+
+  <personnage name="DameChignon">
+    <nom>"PNJ_7"</nom>
+    <image>sprite_damechignon.png</image>
+    <place_x>655</place_x>
+    <place_y>2375</place_y>
+    <indice>pas_rose.png</indice>
+    <coupable>false</coupable>
+    <anime>true</anime>
+    <new_x>655</new_x>
+    <new_y>2375</new_y>
+  </personnage>
+
+  <personnage name="Maire">
+    <nom>"PNJ_8"</nom>
+    <image>sprite_maire.png</image>
+    <place_x>1850</place_x>
+    <place_y>1090</place_y>
+    <indice>triste.png</indice>
+    <coupable>false</coupable>
+    <anime>true</anime>
+    <new_x>1850</new_x>
+    <new_y>1090</new_y>
+  </personnage>
+
+  <personnage name="Commissaire">
+    <nom>"PNJ_9"</nom>
+    <image>sprite_commissaire.png</image>
+    <place_x>2700</place_x>
+    <place_y>1300</place_y>
+    <indice>triste.png</indice>
+    <coupable>false</coupable>
+    <anime>true</anime>
+    <new_x>2700</new_x>
+    <new_y>1300</new_y>
+  </personnage>
+
+</PNJ>
